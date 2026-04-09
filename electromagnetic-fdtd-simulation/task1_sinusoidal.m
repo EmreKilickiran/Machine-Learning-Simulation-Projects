@@ -1,11 +1,11 @@
-% =========================================================================
+
 % task1_sinusoidal.m — Free Space Wave Propagation (Sinusoidal Source)
-% =========================================================================
+
 % Simulates 1D EM wave propagation in free space using the FDTD method
 % with the Yee algorithm. A 1 GHz sinusoidal source excites the domain.
-%
+
 % Validates: wave velocity (< 3% error vs analytical c0)
-% =========================================================================
+
 
 clear; clc; close all;
 
