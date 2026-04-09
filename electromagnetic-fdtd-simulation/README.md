@@ -13,7 +13,7 @@ The solver implements the Yee algorithm to discretize Maxwell's curl equations (
 | `task1_sinusoidal.m` | Free space, sinusoidal source | Wave velocity: 2.04% error vs c₀ |
 | `task1_gaussian.m` | Free space, Gaussian pulse | Pulse propagation & velocity |
 | `task2_dielectric.m` | Lossless (εr=16) + lossy (σ=0.5 S/m) | Velocity: 0.87% error; attenuation vs e⁻ᵅᶻ |
-| `task3_interface.m` | Single dielectric interface (εr: 1→4) | Γ = −0.333, T = 0.667 (analytical match) |
+| `task3_interface.m` | Single dielectric interface (εr: 1→4) | Γ = -0.333, T = 0.667 (analytical match) |
 | `task4_antireflection.m` | Quarter-λ AR coating | FFT confirms reflection suppression at 1 GHz |
 | `task5_bragg_reflector.m` | Periodic Bragg reflector (5 periods) | Strong reflection via constructive interference |
 
@@ -32,8 +32,8 @@ The solver implements the Yee algorithm to discretize Maxwell's curl equations (
 ├── README.md
 ├── Report.pdf                      # Full project report with figures
 └── matlab/
-    ├── task1_sinusoidal.m          # Free space — sinusoidal source
-    ├── task1_gaussian.m            # Free space — Gaussian pulse
+    ├── task1_sinusoidal.m          # Free space - sinusoidal source
+    ├── task1_gaussian.m            # Free space - Gaussian pulse
     ├── task2_dielectric.m          # Lossless + lossy dielectric media
     ├── task3_interface.m           # Single interface reflection/transmission
     ├── task4_antireflection.m      # Quarter-wavelength AR coating + FFT
