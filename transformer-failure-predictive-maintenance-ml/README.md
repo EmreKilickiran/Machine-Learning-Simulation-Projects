@@ -1,6 +1,6 @@
 # Predictive Maintenance Optimization for Power Distribution Networks
 
-Two computational models for predictive maintenance prioritization across a power distribution network, developed during an ML internship at **Enerjisa Enerji A.Ş.**. Both models were validated against real-world fault data and deployed into Enerjisa's operational maintenance workflow.
+Two computational models for predictive maintenance prioritization across a power distribution network, developed during an ML internship at **Enerjisa JSC**. Both models were validated against real-world fault data and deployed into Enerjisa's operational maintenance workflow.
 
 ## Data Preprocessing
 
