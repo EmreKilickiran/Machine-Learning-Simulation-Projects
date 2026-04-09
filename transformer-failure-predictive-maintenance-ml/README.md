@@ -1,6 +1,6 @@
 # Predictive Maintenance Optimization for Power Distribution Networks
 
-Two computational models for predictive maintenance prioritization across a power distribution network, developed during an ML internship at **Enerjisa Enerji A.Ş.** (Turkey's largest electricity distribution company). Both models were validated against real-world fault data and deployed into Enerjisa's operational maintenance workflow.
+Two computational models for predictive maintenance prioritization across a power distribution network, developed during an ML internship at **Enerjisa Enerji A.Ş.**. Both models were validated against real-world fault data and deployed into Enerjisa's operational maintenance workflow.
 
 ## Data Preprocessing
 
@@ -24,7 +24,7 @@ Raw Outage Data → Statistical Indicators (z-score, IQR)
 
 - Trained Isolation Forest on the preprocessed feature space to compute per-asset anomaly scores
 - Computed statistical anomaly indicators (z-score, IQR) across all numerical features
-- Analyzed SHAP values to quantify individual feature contributions — inventory age, outage duration, and customer impact emerged as dominant drivers
+- Analyzed SHAP values to quantify individual feature contributions - inventory age, outage duration, and customer impact emerged as dominant drivers
 - Computed anomaly score distribution across ~60,000 assets; flagged lowest-scoring units as high-priority candidates
 
 ### Run
