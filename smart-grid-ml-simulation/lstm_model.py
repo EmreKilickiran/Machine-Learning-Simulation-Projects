@@ -1,6 +1,4 @@
-# =============================================================================
 # models/lstm_model.py — LSTM-RNN Hybrid with Optuna Hyperparameter Tuning
-# =============================================================================
 #
 # Implements a two-layer LSTM-RNN architecture with Optuna-optimized
 # hyperparameters for energy demand forecasting using weather features.
@@ -11,12 +9,7 @@
 #   Optimizer: Adam (lr = 0.00378)
 #
 # Performance: R² = 0.901 | RMSE = 5.60% | MAPE = 4.52%
-#
-# Usage:
-#   python -m models.lstm_model
-#
-# Author : Yunus Emre Kılıçkıran
-# =============================================================================
+
 
 import sys
 import os
