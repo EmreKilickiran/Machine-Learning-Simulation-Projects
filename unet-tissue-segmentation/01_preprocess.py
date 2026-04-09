@@ -1,28 +1,20 @@
-# =============================================================================
 # 01_preprocess.py — Data Preprocessing & Mask Extraction
-# =============================================================================
 #
 # Extracts cell and nuclear annotation masks from the TissueNet v1.1 NPZ
 # archives and saves them as individual PNG images for the tf.data pipeline.
 #
-# TissueNet: A large-scale dataset of tissue microscopy images with
-# pixel-level annotations for cell and nuclear segmentation.
 # Reference: Greenwald et al., Nature Biotechnology, 2022.
 #
 # Input:  tissuenet_v1.1_{train,val,test}.npz
 # Output: {train,val,test}_{cell,nuclear}/ directories with PNG masks
-#
-# Author : Yunus Emre Kılıçkıran
-# Course : AI in Health Sciences (EE4069), Spring 2024
-# =============================================================================
+
 
 import os
 import numpy as np
 from PIL import Image
 
-# =============================================================================
+
 # CONFIGURATION
-# =============================================================================
 
 DATA_DIR   = "data"
 OUTPUT_DIR = "data/processed"
@@ -38,9 +30,8 @@ ANNOTATION_CHANNELS = {
     "nuclear": 1,   # Channel 1: nuclear-level annotations
 }
 
-# =============================================================================
+
 # UTILITY FUNCTIONS
-# =============================================================================
 
 def convert_to_rgb(image):
     """Ensure image has 3 channels (RGB) for visualization."""
@@ -60,9 +51,7 @@ def create_overlay(image, annotations, color):
     return (overlay * 255).astype(np.uint8)
 
 
-# =============================================================================
 # MASK EXTRACTION
-# =============================================================================
 
 def extract_masks(npz_path, split_name):
     """Extract and save annotation masks from NPZ archive."""
@@ -90,9 +79,8 @@ def extract_masks(npz_path, split_name):
         print(f"    Saved {y.shape[0]} {ann_name} masks → {out_dir}")
 
 
-# =============================================================================
+
 # VISUALIZATION (sample overlay)
-# =============================================================================
 
 def visualize_sample(npz_path, save_path="results/sample_overlay.png"):
     """Generate a sample overlay visualization."""
@@ -129,9 +117,8 @@ def visualize_sample(npz_path, save_path="results/sample_overlay.png"):
     print(f"\n  Sample overlay saved: {save_path}")
 
 
-# =============================================================================
+
 # MAIN
-# =============================================================================
 
 if __name__ == "__main__":
     print("=" * 60)
