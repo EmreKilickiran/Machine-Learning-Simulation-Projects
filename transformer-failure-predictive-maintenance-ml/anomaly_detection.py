@@ -1,9 +1,5 @@
-# =============================================================================
+
 # anomaly_detection.py — Isolation Forest Anomaly Detection Dashboard
-# =============================================================================
-#
-# Project 2.1: Computational Modeling and Statistical Analysis of
-# Infrastructure Anomalies
 #
 # Identifies grid assets exhibiting statistically abnormal operational behavior
 # using unsupervised learning (Isolation Forest), with SHAP-based feature
@@ -18,13 +14,7 @@
 #   6. Interactive feeder inspection and maintenance tracking
 #
 # Run:  streamlit run anomaly_detection.py
-#
-# Note: This version uses modified data to comply with NDAs. The analytical
-# methodology and system architecture remain true to the original.
-#
-# Author : Yunus Emre Kılıçkıran
-# Context: Enerjisa Enerji A.Ş., Istanbul — ML Internship (Jul–Aug 2024)
-# =============================================================================
+
 
 import shap
 import numpy as np
@@ -34,9 +24,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import IsolationForest
 
-# =============================================================================
+
 # 1. DATA LOADING & PREPROCESSING
-# =============================================================================
 
 @st.cache_data
 def load_data(path="data/Data.csv"):
@@ -67,9 +56,8 @@ def compute_shap_values(_model, numeric_features, sample_size=1000):
     return shap_values, X_sample
 
 
-# =============================================================================
+
 # 2. STREAMLIT DASHBOARD
-# =============================================================================
 
 sns.set(style="whitegrid")
 data = load_data()
@@ -117,9 +105,8 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 st.pyplot(fig)
 
-# =============================================================================
+
 # 3. ISOLATION FOREST MODEL
-# =============================================================================
 
 st.header("Isolation Forest Anomaly Detection")
 st.write(
@@ -170,9 +157,8 @@ st.write(
     "represent the most anomalous feeders requiring immediate attention."
 )
 
-# =============================================================================
+
 # 4. FEEDER INSPECTION
-# =============================================================================
 
 st.header("Feeder Anomaly Rankings")
 
@@ -193,9 +179,8 @@ with col2:
     display_cols = [c for c in data.columns if c != "AgeGroup"]
     st.dataframe(data[data["Feeder"] == selected][display_cols])
 
-# =============================================================================
+
 # 5. MAINTENANCE TRACKING SYSTEM
-# =============================================================================
 
 st.header("Maintenance Management")
 
