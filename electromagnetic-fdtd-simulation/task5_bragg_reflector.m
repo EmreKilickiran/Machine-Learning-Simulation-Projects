@@ -1,10 +1,10 @@
-% =========================================================================
+
 % task5_bragg_reflector.m — Periodic Bragg Reflector Structure
-% =========================================================================
+
 % Implements a multi-layer dielectric Bragg reflector with alternating
 % permittivities (εA=2, εB=6), each layer λ/4 thick at 1 GHz.
 % Constructive interference creates strong reflection at the design freq.
-% =========================================================================
+
 
 clear; clc; close all;
 
