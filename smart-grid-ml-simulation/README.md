@@ -10,8 +10,8 @@ The pipeline independently develops and compares three machine learning architec
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              INPUT DATA                                  │
-│  Power consumption + Weather data + Calendar features    │
+│              INPUT DATA                                 │
+│  Power consumption + Weather data + Calendar features   │
 └────────────────────────┬────────────────────────────────┘
                          │
               ┌──────────▼──────────┐
@@ -47,7 +47,7 @@ The pipeline independently develops and compares three machine learning architec
               │ • 3 PV penetration  │
               │   levels (5-100%)   │
               │ • 5 capacity mult.  │
-              │   (C=1 to C=5)     │
+              │   (C=1 to C=5)      │
               │ • Threshold-based   │
               │   charge/discharge  │
               └─────────────────────┘
