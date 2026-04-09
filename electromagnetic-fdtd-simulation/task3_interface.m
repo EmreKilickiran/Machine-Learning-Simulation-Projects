@@ -1,10 +1,10 @@
-% =========================================================================
+
 % task3_interface.m — Single Dielectric Interface (Reflection/Transmission)
-% =========================================================================
+
 % Domain split: left (εr=1, free space) | right (εr=4, dielectric)
 % Validates reflection coefficient Γ and transmission coefficient T
 % against analytical Fresnel equations.
-% =========================================================================
+
 
 clear; clc; close all;
 
