@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# =============================================================================
+# 
 # run_all.py — Execute the Full Energy Demand Forecasting Pipeline
-# =============================================================================
+# 
 #
 # Usage:
 #   python run_all.py              # Run all models + simulation
@@ -9,7 +9,6 @@
 #   python run_all.py lstm         # Run only LSTM-RNN
 #   python run_all.py svm          # Run only SVM
 #   python run_all.py storage      # Run only storage simulation
-# =============================================================================
 
 import sys
 import os
