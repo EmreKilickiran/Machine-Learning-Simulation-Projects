@@ -1,6 +1,4 @@
-# =============================================================================
 # models/xgboost_model.py — XGBoost Gradient Boosting with Sliding Window
-# =============================================================================
 #
 # Implements XGBoost regression with a sliding window approach for short-term
 # energy demand forecasting. Feature importance-based selection reduces
@@ -11,12 +9,6 @@
 #   (b) Net demand model  — predicts demand minus PV production
 #
 # Performance: R² = 0.905 | RMSE = 5.26% | MAPE = 4.49%
-#
-# Usage:
-#   python -m models.xgboost_model
-#
-# Author : Yunus Emre Kılıçkıran
-# =============================================================================
 
 import sys
 import os
