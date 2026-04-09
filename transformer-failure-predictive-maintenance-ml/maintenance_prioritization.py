@@ -21,7 +21,7 @@
 #   - Power: Rated capacity (log-transformed for skew correction)
 #   - other_features: Derived operational metric (log-transformed)
 #   - Subtype, Class, Type: Categorical asset attributes
-==
+
 
 import pandas as pd
 import numpy as np
