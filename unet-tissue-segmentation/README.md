@@ -45,14 +45,14 @@ The performance gap is primarily attributed to computational constraints that li
 ```
 Input (128×128×1)
   │
-  ├─ Conv2D(32) + BN + Dropout(0.2) ──────────────┐ skip
-  │  MaxPool                                        │
+  ├─ Conv2D(32) + BN + Dropout(0.2) ───────────────┐ skip
+  │  MaxPool                                       │
   ├─ Conv2D(64) + BN + Dropout(0.2) ────────┐ skip │
-  │  MaxPool                                 │      │
+  │  MaxPool                                │      │
   ├─ Conv2D(128) + BN + Dropout(0.3)        │      │  Bottleneck
-  │  UpSample                                │      │
+  │  UpSample                               │      │
   ├─ Concat + Conv2D(64) + BN + Dropout ────┘      │
-  │  UpSample                                       │
+  │  UpSample                                      │
   ├─ Concat + Conv2D(32) + BN + Dropout ───────────┘
   │
   └─ Conv2D(1, sigmoid) → Binary Mask
@@ -90,7 +90,3 @@ python 01_preprocess.py
 # Step 2: Train U-Net and evaluate
 python 02_train.py
 ```
-
-## Data
-
-TissueNet v1.1 is available from the DeepCell project. Each NPZ archive contains `X` (microscopy images) and `y` (annotations with channel 0 = cell boundaries, channel 1 = nuclear boundaries).
