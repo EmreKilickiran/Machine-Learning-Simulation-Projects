@@ -1,10 +1,10 @@
-% =========================================================================
+
 % task4_antireflection.m — Quarter-Wavelength Anti-Reflection Coating
-% =========================================================================
+
 % Introduces a matching layer (εr = √(εr1·εr2)) of thickness λ/4
 % between two dielectric regions to minimize reflections at 1 GHz.
 % Validated via FFT-based frequency-domain analysis of reflected signal.
-% =========================================================================
+
 
 clear; clc; close all;
 
