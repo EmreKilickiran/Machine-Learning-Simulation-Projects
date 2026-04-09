@@ -25,9 +25,9 @@ The pipeline independently develops and compares three machine learning architec
               │  • Daypart segments │
               └──────────┬──────────┘
                          │
-          ┌──────────────┼──────────────┐
-          │              │              │
-   ┌──────▼──────┐ ┌────▼────┐ ┌──────▼──────┐
+          ┌──────────────┼────────────┐
+          │              │            │
+   ┌──────▼──────┐ ┌─────▼───┐ ┌──────▼──────┐
    │ xgboost     │ │  lstm   │ │    svm      │
    │ _model.py   │ │ _model  │ │  _model.py  │
    │             │ │  .py    │ │             │
@@ -35,7 +35,7 @@ The pipeline independently develops and compares three machine learning architec
    │ Window +    │ │ LSTM +  │ │ C=100       │
    │ XGBRegressor│ │ Optuna  │ │ gamma=0.1   │
    │             │ │         │ │             │
-   │ R²=0.905   │ │ R²=0.901│ │ R²=0.806     │
+   │ R²=0.905    │ │ R²=0.901│ │ R²=0.806    │
    └──────┬──────┘ └────┬────┘ └──────┬──────┘
           │              │              │
           └──────────────┼──────────────┘
