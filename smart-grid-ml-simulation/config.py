@@ -1,21 +1,11 @@
-# =============================================================================
 # config.py — Shared Configuration, Feature Engineering & Evaluation Utilities
-# =============================================================================
-#
-# Provides all shared functionality used across the three model pipelines
-# and the renewable integration simulation.
-#
-# Author : Yunus Emre Kılıçkıran
-# =============================================================================
 
 import numpy as np
 import pandas as pd
 from sklearn.metrics import (mean_absolute_error, mean_squared_error,
                              mean_absolute_percentage_error, r2_score)
 
-# =============================================================================
-# FILE PATHS (modify for your environment)
-# =============================================================================
+# FILE PATHS 
 
 DATA_DIR            = "data"
 RESULTS_DIR         = "results"
@@ -23,9 +13,7 @@ ENERGY_DATA_FILE    = f"{DATA_DIR}/FilteredEnergyData.xlsx"
 WEATHER_TRAIN_FILE  = f"{DATA_DIR}/cleaned_energy_data.csv"
 WEATHER_FUTURE_FILE = f"{DATA_DIR}/processed_future_weather_data.csv"
 
-# =============================================================================
 # PARAMETERS
-# =============================================================================
 
 WINDOW_SIZE    = 12       # Sliding window length (hours)
 PRICE_PER_KWH = 2.0      # TL/kWh for cost analysis
@@ -57,9 +45,8 @@ WEATHER_FEATURES = [
     "TimeOfDay_Evening", "TimeOfDay_Night",
 ]
 
-# =============================================================================
+
 # FEATURE ENGINEERING
-# =============================================================================
 
 def add_fourier_features(df, column, periods):
     """Add sin/cos Fourier decomposition for cyclical pattern capture."""
@@ -173,9 +160,7 @@ def prepare_weather_data():
     return combined, relevant, future_data
 
 
-# =============================================================================
 # EVALUATION UTILITIES
-# =============================================================================
 
 def calculate_metrics(y_true, y_pred, set_name="Set"):
     """Compute and display regression performance metrics."""
