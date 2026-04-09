@@ -1,18 +1,11 @@
-# =============================================================================
 # models/svm_model.py — Support Vector Machine with RBF Kernel
-# =============================================================================
 #
 # Implements SVR with radial basis function kernel and Grid Search-optimized
 # hyperparameters (C=100, gamma=0.1) for energy demand forecasting using
 # weather features.
 #
 # Performance: R² = 0.806 | RMSE = 7.53% | MAPE = 5.86%
-#
-# Usage:
-#   python -m models.svm_model
-#
-# Author : Yunus Emre Kılıçkıran
-# =============================================================================
+
 
 import sys
 import os
