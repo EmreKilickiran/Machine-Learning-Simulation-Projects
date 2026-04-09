@@ -18,7 +18,7 @@ omega = 2*pi*f;
 
 %% PART A: Lossless Dielectric (εr = 16) 
 
-fprintf('\nPart A: Lossless Dielectric\n');
+fprintf('\n Part A: Lossless Dielectric \n');
 
 eps_r_a = 16;
 eps_a   = eps_r_a * eps0;
