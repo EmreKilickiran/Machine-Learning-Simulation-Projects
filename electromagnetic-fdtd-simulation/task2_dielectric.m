@@ -1,11 +1,11 @@
-% =========================================================================
+
 % task2_dielectric.m — Wave Propagation in Dielectric Media
-% =========================================================================
+
 % Part (a): Lossless dielectric (εr = 16, σ = 0)
 %   - Validates reduced wave velocity: v = c0/√εr
 % Part (b): Lossy medium (εr = 16, σ = 0.5 S/m)
 %   - Validates exponential attenuation against analytical e^(-αz)
-% =========================================================================
+
 
 clear; clc; close all;
 
@@ -16,9 +16,9 @@ eps0 = 1/(mu0*c0^2);
 f     = 1e9;
 omega = 2*pi*f;
 
-%% ===== PART A: Lossless Dielectric (εr = 16) =====
+%% PART A: Lossless Dielectric (εr = 16) 
 
-fprintf('\n========== Part A: Lossless Dielectric ==========\n');
+fprintf('\nPart A: Lossless Dielectric\n');
 
 eps_r_a = 16;
 eps_a   = eps_r_a * eps0;
@@ -72,9 +72,9 @@ xlabel('Distance (m)'); ylabel('Power Density (W/m^2)');
 xlim([0 1]);
 title('Power vs Distance — Lossless Dielectric (\epsilon_r = 16)');
 
-%% ===== PART B: Lossy Medium (σ = 0.5 S/m) =====
+%% PART B: Lossy Medium (σ = 0.5 S/m)
 
-fprintf('\n========== Part B: Lossy Medium ==========\n');
+fprintf('\n Part B: Lossy Medium \n');
 
 eps_r_b = 16;
 eps_b   = eps_r_b * eps0;
