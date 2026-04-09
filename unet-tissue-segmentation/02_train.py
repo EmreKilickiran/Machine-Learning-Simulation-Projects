@@ -1,6 +1,4 @@
-# =============================================================================
 # 02_train.py — U-Net Training & Evaluation Pipeline
-# =============================================================================
 #
 # Trains a U-Net convolutional neural network for pixel-level segmentation
 # of cellular structures in tissue microscopy images (TissueNet v1.1).
@@ -11,18 +9,8 @@
 #   Decoder:    Up → Concat → Conv(64) → Up → Concat → Conv(32)
 #   Output:     Conv(1, sigmoid) — binary segmentation mask
 #
-# Features:
-#   - Memory-efficient tf.data pipeline with on-the-fly augmentation
-#   - Batch normalization + dropout for regularization
-#   - Custom IoU and F1 metrics
-#   - Early stopping + adaptive learning rate scheduling
-#
 # Results: F1 = 0.71, IoU = 0.55 (on 2,500 training images, 10 epochs)
 # Reference: Mesmer achieves F1 = 0.82 on full dataset with extensive tuning
-#
-# Author : Yunus Emre Kılıçkıran
-# Course : AI in Health Sciences (EE4069), Spring 2024
-# =============================================================================
 
 import os
 import numpy as np
@@ -35,9 +23,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 import matplotlib.pyplot as plt
 from PIL import Image
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 # Directories (output of 01_preprocess.py)
 TRAIN_DIR = "data/processed/train_nuclear"
@@ -56,9 +42,7 @@ BATCH_SIZE   = 16
 EPOCHS       = 10
 LEARNING_RATE = 1e-4
 
-# =============================================================================
 # DATA PIPELINE (tf.data)
-# =============================================================================
 
 def process_image_and_mask(file_path):
     """Load, resize, normalize, and augment an image-mask pair."""
@@ -102,9 +86,7 @@ def create_dataset(directory, limit):
     return dataset
 
 
-# =============================================================================
 # CUSTOM METRICS
-# =============================================================================
 
 def iou(y_true, y_pred):
     """Intersection over Union (IoU) metric."""
@@ -127,9 +109,7 @@ def f1_score(y_true, y_pred):
     return 2 * (precision * recall) / (precision + recall + 1e-7)
 
 
-# =============================================================================
 # U-NET ARCHITECTURE
-# =============================================================================
 
 def build_unet(input_size=(128, 128, 1)):
     """
@@ -184,9 +164,7 @@ def build_unet(input_size=(128, 128, 1)):
     return Model(inputs=[inputs], outputs=[outputs], name="UNet")
 
 
-# =============================================================================
 # TRAINING
-# =============================================================================
 
 def train():
     print("=" * 60)
@@ -247,9 +225,7 @@ def train():
     return model, history
 
 
-# =============================================================================
 # VISUALIZATION
-# =============================================================================
 
 def plot_training_history(history):
     """Plot F1, IoU, and loss convergence over epochs."""
@@ -302,9 +278,7 @@ def visualize_predictions(dataset, model, n=4):
         break
 
 
-# =============================================================================
 # MAIN
-# =============================================================================
 
 if __name__ == "__main__":
     train()
