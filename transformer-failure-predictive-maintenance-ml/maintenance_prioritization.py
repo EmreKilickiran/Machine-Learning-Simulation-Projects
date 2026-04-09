@@ -1,9 +1,4 @@
-# =============================================================================
 # maintenance_prioritization.py — Random Forest-Based Maintenance Scoring
-# =============================================================================
-#
-# Project 2.2: Multi-Variable Computational Modeling for Predictive
-# Maintenance Prioritization
 #
 # Ranks infrastructure units by predicted failure severity using a hybrid
 # supervised-unsupervised framework, quantifying expected customer impact
@@ -26,10 +21,7 @@
 #   - Power: Rated capacity (log-transformed for skew correction)
 #   - other_features: Derived operational metric (log-transformed)
 #   - Subtype, Class, Type: Categorical asset attributes
-#
-# Author : Yunus Emre Kılıçkıran
-# Context: Enerjisa Enerji A.Ş., Istanbul — ML Internship (Jul–Aug 2024)
-# =============================================================================
+==
 
 import pandas as pd
 import numpy as np
@@ -39,9 +31,8 @@ from sklearn.preprocessing import MinMaxScaler, LabelEncoder, OneHotEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-# =============================================================================
+
 # CONFIGURATION
-# =============================================================================
 
 INPUT_FILE  = "data/frekans2.xlsx"
 OUTPUT_FILE = "results/top_priority_assets.xlsx"
@@ -58,9 +49,8 @@ NUMERIC_FEATURES = [
 CATEGORICAL_FEATURES = ["Subtype", "Class", "Type"]
 ID_COLUMN = "ID"
 
-# =============================================================================
+
 # 1. DATA LOADING & FEATURE ENGINEERING
-# =============================================================================
 
 print("=" * 65)
 print(" Predictive Maintenance Prioritization Pipeline")
@@ -82,9 +72,8 @@ for col in ["Power", "other_features"]:
     skew_after = data[col].skew()
     print(f"  {col}: skewness {skew_before:.2f} → {skew_after:.2f}")
 
-# =============================================================================
+
 # 2. NORMALIZATION & ENCODING
-# =============================================================================
 
 print("[3/5] Normalizing and encoding features...")
 
@@ -122,9 +111,8 @@ data_encoded = data_encoded.loc[:, ~data_encoded.columns.duplicated()]
 feature_cols = [c for c in data_encoded.columns if c != ID_COLUMN]
 print(f"  Features after encoding: {len(feature_cols)}")
 
-# =============================================================================
+
 # 3. RANDOM FOREST FEATURE IMPORTANCE
-# =============================================================================
 
 print("[4/5] Training Random Forest for feature importance...")
 
@@ -157,9 +145,8 @@ plt.tight_layout()
 plt.savefig("results/feature_importances.pdf")
 plt.close()
 
-# =============================================================================
+
 # 4. WEIGHTED SCORING
-# =============================================================================
 
 print("\n[5/5] Computing weighted maintenance-priority scores...")
 
@@ -175,9 +162,8 @@ data_encoded["score"] = sum(
 # Rank by descending score
 data_encoded = data_encoded.sort_values("score", ascending=False)
 
-# =============================================================================
+
 # 5. EXPORT RESULTS
-# =============================================================================
 
 top_assets = data_encoded.head(TOP_N)
 
