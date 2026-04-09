@@ -1,9 +1,8 @@
-% =========================================================================
 % task1_gaussian.m — Free Space Wave Propagation (Gaussian Pulse Source)
-% =========================================================================
+
 % Simulates a raised-cosine Gaussian pulse propagating in free space.
 % Validates velocity via cross-correlation-based peak tracking.
-% =========================================================================
+
 
 clear; clc; close all;
 
