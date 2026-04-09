@@ -1,6 +1,4 @@
-# =============================================================================
 # models/storage_simulation.py — Multi-Scenario PV + Storage Simulation
-# =============================================================================
 #
 # Simulates battery storage with threshold-based charge/discharge logic
 # across multiple PV penetration levels and storage capacity multipliers.
@@ -14,9 +12,7 @@
 #
 # Usage:
 #   python -m models.storage_simulation
-#
-# Author : Yunus Emre Kılıçkıran
-# =============================================================================
+
 
 import sys
 import os
